@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>buttonOnClick</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+
+        
+
+        
+
+       function Button(){
+    console.log("Button function running!");
+    const [count, setCount] = React.useState(0);
+    console.log("Current count is:", count);
+
+    return(
+        <button onClick={() => {
+            console.log("Button clicked! Old count:", count);
+            setCount(count + 1);
+            console.log("setCount called with:", count + 1);
+        }}>
+            Clicked {count} times
+        </button>
+    )
+}
+      function App(){
+        return(
+            <Button />
+
+        )
+        
+
+      }
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App />);
+    </script>
+  </body>
+</html>
